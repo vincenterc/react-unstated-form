@@ -1,3 +1,11 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var PropsFactory = function PropsFactory(setState) {
@@ -89,8 +97,8 @@ var PropsFactory = function PropsFactory(setState) {
                 var validationError = fnValidate(key, value, values);
 
                 setState({
-                    values: Object.assign({}, values, _defineProperty({}, key, value)),
-                    errors: Object.assign({}, errors, _defineProperty({}, key, validationError))
+                    values: _extends({}, values, _defineProperty({}, key, value)),
+                    errors: _extends({}, errors, _defineProperty({}, key, validationError))
                 });
             };
 
@@ -130,6 +138,5 @@ var defaultValidator = function defaultValidator(key, value, values) {
     return null;
 };
 
-export default PropsFactory;
-
-export { defaultValidator };
+exports.default = PropsFactory;
+exports.defaultValidator = defaultValidator;

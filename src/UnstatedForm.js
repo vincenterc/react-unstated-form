@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropsFactory from './PropsFactory';
 
-class UnstatedForm extends Component {
+class UnstatedForm extends React.Component {
   constructor(props) {
     super(props);
     let {values, editing=false} = this.props.actions.init();
