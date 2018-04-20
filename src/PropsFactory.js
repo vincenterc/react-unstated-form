@@ -76,14 +76,15 @@ const PropsFactory = (setState, options={}) => {
 
                 let props = {
                     value: values[key],
-                    disabled: submitting,
                     name: key,
                 };
 
                 if (native) {
                     props.onChangeText = onChange;
+                    props.editable = submitting;
                 } else {
                     props.onChange = onChange;
+                    props.disabled = submitting;
                 }
 
                 return props;
